@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+
+<!-- 
+I am thinking about making a booking and
+flight list that can with calendars and shit like that
+-->
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Steven Osborne</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.13/d3.js"></script>
+<script type="text/javascript" src="app.js"></script>
+	</head>
+	<body>
+      <div id="content"></div>
+    	<script type="text/jsx">
+//   var UserGist = React.createClass({
+//   getInitialState: function() {
+//     return {
+//       AUD: '', 
+//       BRL: ''
+//     };
+//   },
+
+//   componentDidMount: function() {
+//     var url = "https://api.bitcoinaverage.com/ticker/all";
+//     $.get(url, function(result) {
+//       var lastGist = result;
+//       console.log(result);
+//       if (this.isMounted()) {
+//         this.setState({
+//           AUD: lastGist.AUD.total_vol,
+//           BRL: lastGist.BRL.total_vol
+//         });
+//       }
+//     }.bind(this));
+//   },
+
+//   render: function() {
+//     var inlineStyle = {color: "blue", margin: "2px"};
+//     var background = {background: "green"};
+//     var currency = this.state;
+//     return (
+//       <div>
+//       <h1>value</h1>
+//         <p style={inlineStyle}>{currency.AUD} AUD</p>
+//         <p style={inlineStyle}>{currency.BRL} BRL</p>
+//       </div>
+//     );
+//   }
+// });
+    var Chart = React.createClass({
+      render: function() {
+        return (
+          <svg width={this.props.width} height={this.props.height}>{this.props.children}</svg>
+        );
+      }
+    }); 
+
+    var Bar = React.createClass({
+      getDefaultProps: function(){
+        return {
+
+        }
+      },
+      render: function() {
+        return (
+        <rect fill={this.props.color} width={this.props.width} height={this.props.height} x={this.props.offset} y={this.props.availableHeight - this.props.height}></rect>
+        );
+      }
+    }); 
+
+      // var DataSeries = React.createClass({
+      //   getDefaultProps: function(){
+      //     return{
+      //       title: '',
+      //       data: []
+      //     }
+      //   },
+      //   render: function(){
+      //     var props = this.props;
+
+      //     var yScale = d3.scale.linear()
+      //       .domain([0, d3.max(this.props.data)])
+      //       .range([0, this.props.height]);
+
+      //     var xScale = d3.scale.ordinal()
+      //       .domain(d3.range(this.props.data.length))
+      //       .rangeRoundBands([0, this.props.width], 0.5);
+
+      //     var bars = _.map(this.props.data, function(point, i){
+      //       return(
+      //         <Bar height={yScale(point)} width={xScale.rangeBand()} offset={xScale(i)} availableHeight={props.height} color={props.color} key={i}/>
+      //       );
+      //     });
+      //       return (
+      //         <g>{bars}</g>
+      //       );
+      //   }
+      // });
+
+        // var BarChart = React.createClass({
+        //   render: function() {
+        //     return (
+        //       <Chart width={this.props.width} height={this.props.height}>
+        //         <DataSeries data={[4, 7, 6]} color={"blue"} width={this.props.width} height={this.props.height}></DataSeries>
+        //       </Chart>
+        //     );
+        //   }
+        // });
+
+            React.render(
+            <div>
+                <UserGist>
+                </UserGist>
+                <BarChart width={600} height={300} />
+            </div>,
+             document.getElementById("content"));
+        </script>
+        <script type="../build/app.js"></script>
+    </body> 
+</html> 
+
+        <!-- {this.componentDidMount.map(function(cash, i){
+          return(<p style={inlineStyle}>{cash.BRL} BRL</p>)
+        })}
+ -->
+
+      <!--  <p>{currency.CAD} CAD</p>
+        <p>{currency.CNY} CNY</p>
+        <p>{currency.EUR} EUR</p>
+        <p>{currency.GBP} GBP</p>
+        <p>{currency.HKD} HKD</p>
+        <p>{currency.IDR} IDR</p>
+        <p>{currency.ILS} ILS</p>
+        <p>{currency.INR} INR</p>
+        <p>{currency.JPY} JPY</p>
+        <p>{currency.MXN} MXN</p>
+        <p>{currency.NOK} NOK</p>
+        <p>{currency.NZD} NZD</p>
+        <p>{currency.PLN} PLN</p>
+        <p>{currency.RON} RON</p>
+        <p>{currency.RUB} RUB</p>
+        <p>{currency.SEK} SEK</p>
+        <p>{currency.SGD} SGD</p>
+        <p>{currency.USD} USD</p>
+        <p>{currency.ZAR} ZAR</p> -->
+
+        <!--  CAD: lastGist.CAD.ask,
+          CNY: lastGist.CNY.ask,
+          EUR: lastGist.EUR.ask,
+          GBP: lastGist.GBP.ask,
+          HKD: lastGist.HKD.ask,
+          IDR: lastGist.IDR.ask,
+          ILS: lastGist.ILS.ask,
+          INR: lastGist.INR.ask,
+          JPY: lastGist.JPY.ask,
+          MXN: lastGist.MXN.ask,
+          NOK: lastGist.NOK.ask,
+          NZD: lastGist.NZD.ask,
+          PLN: lastGist.PLN.ask,
+          RON: lastGist.RON.ask,
+          RUB: lastGist.RUB.ask,
+          SEK: lastGist.SEK.ask,
+          SGD: lastGist.SGD.ask,
+          USD: lastGist.USD.ask,
+          ZAR: lastGist.ZAR.ask -->

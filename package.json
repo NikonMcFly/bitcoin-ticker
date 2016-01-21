@@ -1,0 +1,26 @@
+{
+  "name": "bitcoin-ticker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-react": "^6.3.13",
+    "babelify": "^7.2.0",
+    "grunt-browserify": "^4.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "rc-calendar": "^4.0.1",
+    "react": "^0.14.5",
+    "react-dom": "^0.14.3",
+    "reactify": "^1.1.1",
+    "watchify": "^3.6.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-eslint": "^17.3.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
