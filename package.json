@@ -8,6 +8,7 @@
     "babelify": "^7.2.0",
     "grunt-browserify": "^4.0.1",
     "grunt-contrib-watch": "^0.6.1",
+    "jquery": "^2.1.4",
     "rc-calendar": "^4.0.1",
     "react": "^0.14.5",
     "react-dom": "^0.14.3",

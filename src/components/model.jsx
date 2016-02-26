@@ -16,9 +16,11 @@ var Model = React.createClass({
       console.log(result);
       if (this.isMounted()) {
         this.setState({
-          AUD: lastGist.AUD.total_vol,
-          BRL: lastGist.BRL.total_vol,
-          USD: lastGist.USD.ask
+          EUR: lastGist.EUR.ask,
+          CNY: lastGist.CNY.ask,
+          USD: lastGist.USD.ask,
+          GBP: lastGist.GBP.ask,
+          CAD: lastGist.CAD.ask
         });
       }
     }.bind(this));
@@ -32,10 +34,11 @@ var Model = React.createClass({
     var currency = this.state;
     return (
       <div>
-        <p style={inlineStyle}>{currency.AUD} AUD</p>
-        <p style={inlineStyle}>{currency.BRL} BRL</p>
+        <p style={inlineStyle}>{currency.EUR} AUD I dont know what im doing</p>
+        <p style={inlineStyle}>{currency.CNY} BRL</p>
         <p style={inlineStyle}>{currency.USD} USD</p>
-        <input type="text" onChange={this.ClickMe} />
+        <p style={inlineStyle}>{currency.GBP} GBP</p>
+        <p style={inlineStyle}>{currency.CAD} CAD</p>
         <p>{this.state.name}</p>
       </div>
     );
