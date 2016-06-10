@@ -1,9 +1,9 @@
 import  { combineReducers } from 'redux'
-import userReducer from './userReducer'
+import bitcoinReducer from './bitcoinReducer'
 
 
 const rootReducer = combineReducers({
-	user: userReducer
+	bitcoin: bitcoinReducer
 })
 
 export default rootReducer

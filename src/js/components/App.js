@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 class App extends Component {
 
 	render() {
-		console.log(this.props.fetchTickerSymbol)
+		console.log(this.props.actions.getTicker())
 		return (
 			<div>
 			<h1>Steve</h1>
