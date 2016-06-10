@@ -3,7 +3,9 @@ Learning ES6 and React Redux with bitcoin ticker [Bitcoin Average](bitcoinaverag
 
 
 ## Run Locally
-
+1. `npm install`
+2. start webpack `webpack --watch`
+3. open another terminal visit `http://localhost:8080`
 
 ## Todos
  - [ ] Full ES6 
