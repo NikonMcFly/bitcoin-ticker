@@ -1,24 +1,32 @@
-import axios from 'axios';
 
-let actions = {
-	recieveTicker: function(data){
-		return {
-			type: "RECEIVE_BITCOIN",
-			data: data
-		}
-	},
 
-	fetchData: function(){
-		let request = axios.get('https://api.bitcoinaverage.com/ticker/all');
-		return request
-	},
+const fetchTicker = function fetchTicker() {
+  return fetch('https://api.bitcoinaverage.com/ticker/all');
+}
 
-	getTicker: function(){
-		fetchData().then(function(data){
-			dispatch(recieveTicker(data))
-		})
-	}
+const getTicker = function getTicker() {
+  return function(dispatch) {
+    return fetchTicker()
+      .then(
+        response => response.json(),
+        error => console.log(error)
+      )
+      .then(
+        json => dispatch(receiveTicker(json))
+      )
+  };
+}
+
+const receiveTicker = function receiveTicker(data) {
+  return {
+    type: "RECEIVE_BITCOIN",
+    data: data
+  }
 }
 
 
-export default actions
+export default {  
+			fetchTicker,
+		  getTicker,
+			receiveTicker
+}
