@@ -8,7 +8,7 @@ Learning ES6 and React Redux with bitcoin ticker [Bitcoin Average](bitcoinaverag
 
 ## Todos
  - [ ] Full ES6 
- - [*] Add redux-thunk
- - [*] Connect app to redux-thunk
+ - [x] Add redux-thunk
+ - [x] Connect app to redux-thunk
  - [ ] Click to see price on each currency
  - [ ] Add UI design
