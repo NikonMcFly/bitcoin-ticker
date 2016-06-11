@@ -10,6 +10,7 @@ class App extends Component {
 		return (
 			<div>
 			<h1>Steve</h1>
+			{this.props.children}
 			</div>
 			)
 	}

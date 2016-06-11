@@ -1,4 +1,4 @@
-
+import axios from 'axios';
 
 let actions = {
 	recieveTicker: function(data){
@@ -8,21 +8,16 @@ let actions = {
 		}
 	},
 
-	fetchTickerSymbol: function(){
-    return fetch('https://api.bitcoinaverage.com/ticker/all')
-  },
+	fetchData: function(){
+		let request = axios.get('https://api.bitcoinaverage.com/ticker/all');
+		return request
+	},
 
-  getTicker: function(){
-  	return function(dispatch){
-  		return fetchTickerSymbol()
-  		.then(response => response.json(),
-  			error => console.log(error)
-  		)
-  		.then(
-  			json => dispatch(recieveTicker(json.data.children))
-  		)
-  	};
-  }
+	getTicker: function(){
+		fetchData().then(function(data){
+			dispatch(recieveTicker(data))
+		})
+	}
 }
 
 
